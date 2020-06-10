@@ -1,7 +1,5 @@
 # require modules here
 require 'yaml'
-require 'pry'
-
 
 def load_library(file_path)
   # code goes here
@@ -9,11 +7,9 @@ def load_library(file_path)
   emoticon = YAML.load_file(file_path)
   emoticon_return= {}
   emoticon.each do |name,value|
-    if(!emoticon_return[name])
-      emoticon_return[name]={}
-    end
-  emoticon_return[name][:english]=emoticon[name][0]
-  emoticon_return[name][:japanese]=emoticon[name][1]
+    emoticon_return[name]={}
+    emoticon_return[name][:english]=emoticon[name][0]
+    emoticon_return[name][:japanese]=emoticon[name][1]
   end
   emoticon_return
 end
