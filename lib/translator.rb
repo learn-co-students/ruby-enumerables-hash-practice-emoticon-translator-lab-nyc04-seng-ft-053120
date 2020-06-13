@@ -5,11 +5,9 @@ def load_library(yaml)
    new_library ={}
    library = YAML.load_file(yaml)
    library.each do | emotion , emoticon |
-     if !new_library[emotion]
-       new_library[emotion] ={:english => emoticon[0] , :japanese => emoticon[1]}
-      end
+    new_library[emotion] ={:english => emoticon[0] , :japanese => emoticon[1]}
     end
-    new_library
+  new_library
 end
 
 def get_english_meaning(yaml,emoticon)
