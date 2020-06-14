@@ -3,7 +3,7 @@ require "yaml"
 
 def load_library(file_path)
   emoticons = YAML.load_file(file_path)
-
+  
   emoticons.each do |key, val_arr|
     old_val = val_arr.dup
     emoticons[key] = {
@@ -16,7 +16,6 @@ def load_library(file_path)
 end
 
 def get_japanese_emoticon(file_path, en_emoticon)
-  # code goes here
   emoticons_hash = load_library(file_path)
   
   emoticons_hash.each do |key, lang_hash|
@@ -29,7 +28,6 @@ def get_japanese_emoticon(file_path, en_emoticon)
 end
 
 def get_english_meaning(file_path, jp_emoticon)
-  # code goes here
   emoticons_hash = load_library(file_path)
   
   emoticons_hash.each do |key, lang_hash|
