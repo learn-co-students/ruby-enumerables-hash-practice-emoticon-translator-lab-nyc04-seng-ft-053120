@@ -5,7 +5,7 @@ def load_library (file_path)
   # code goes here
   file = File.read(file_path)
   emoticons = YAML.load(file)
-  
+  emoticons.each {|x| print x, " "}
   #binding.pry 
    
   #how to transform emoticons or emoticons.keys into a hash from an array 
